@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Creative Machine Learning Scientist with extensive experience across multidisciplinary fields."
+      content="Portfolio website for Sonali Srivastava"
+    />
+    <title>Sonali Srivastava</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="left">Sonali Srivastava</div>
+        <div class="center">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="right">
+          <a href="https://www.linkedin.com/in/sonalisrivastava1610/" target="_blank">
+            <img src="linkedin.png" alt="LinkedIn" class="icon" />
+          </a>
+          <a href="https://github.com" target="_blank">
+            <img src="github.png" alt="GitHub" class="icon" />
+          </a>
+          <a href="https://scholar.google.com/citations?user=JXGMY98AAAAJ&hl=en" target="_blank">
+            <img src="googlescholar.png" alt="Google Scholar" class="icon" />
+          </a>
+          <button id="theme-toggle">🌙</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Sections -->
+    <main>
+      <!-- Hero -->
+      <section id="home" class="firstSection">
+        <div class="leftSection">
+          <p>Oh, hello!</p>
+          <h1>I'm <span class="blue">Sonali Srivastava</span></h1>
+          <p>I am a passionate <span id="element"></span></p>
+        </div> <!-- close leftSection -->
+      
+        <div class="rightSection">
+          <img src="Sonali1.jpg" alt="Sonali Photo" />
+        </div>
+      </section>
+      
+
+      <!-- About -->
+      <section id="about" class="section">
+        <h1>About Me</h1>
+        <p>
+          I am a Ph.D. student in Environmental & Water Resources Engineering at Virginia Tech, 
+          specializing in biosensors development, proteomics, and machine learning. 
+          I am passionate about developing innovative solutions at the intersection of AI and healthcare to tackle
+           global health and environmental challenges. 
+           My long-term goal is to become a research scientist and educator. 
+        </p>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <h1>Projects</h1>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Proteomics Analysis of Viral Infection</h3>
+            <p>
+              LC-MS/MS study exploring protein expression changes in cells after
+              viral infection.
+            </p>
+          </div>
+          <div class="project-card">
+            <h3>Portable Biosensor for Pathogen Detection</h3>
+            <p>
+              Developed low-cost SERS and EIS biosensors for virus detection in water.
+            </p>
+          </div>
+          <div class="project-card">
+            <h3>ML for Spectral Data</h3>
+            <p>
+              Applied machine learning to classify Raman spectra and discover
+              biomarkers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section">
+        <h1>Experience</h1>
+        <ul class="timeline">
+          <li><span>Process Intern</span> – Regeneron, NY (May-Aug 2025)</li>
+          <li><span>Ph.D. Researcher</span> – Virginia Tech, VA (2022–Present)</li>
+          <li><span>Project Associate</span> – IIT Tirupati, India (Jun 2019-Mar 2020)</li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <h1>Contact</h1>
+        <p>
+          Let’s connect! You can reach me at:
+          <a href="mailto:sonali@vt.edu">sonali@vt.edu</a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Sonali Srivastava | Built with ❤️</p>
+    </footer>
+
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Engineer.", "Material Scientist.", "ML Scientist.", "Biologist."],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true,
+      });
+
+      // Dark mode toggle
+      const toggle = document.getElementById("theme-toggle");
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        toggle.textContent =
+          document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+      });
+    </script>
+  </body>
+</html>
