@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     links.forEach(link => {
         link.addEventListener("click", function (event) {
+            if (!this.getAttribute("href").startsWith("#")) {
+                return;
+            }
             event.preventDefault();
             const section = document.querySelector(this.getAttribute("href"));
             if (section) {
@@ -16,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Fade-in animation for sections
-    const sections = document.querySelectorAll(".section, .aboutSection, .news-section, .awards-section, .publications-section, .talks-section");
+    const sections = document.querySelectorAll(".section, .aboutSection, .news-section, .awards-section, .publications-section, .talks-section, .blog-section");
     const options = {
         root: null,
         threshold: 0.2,
