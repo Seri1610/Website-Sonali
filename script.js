@@ -60,7 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
     function addMessage(text, type) {
         const message = document.createElement("div");
         message.className = `chat-message ${type}-message`;
-        message.textContent = text;
+        if (type === "assistant") {
+            message.innerHTML = text;
+        } else {
+            message.textContent = text;
+        }
         messages.appendChild(message);
         messages.scrollTop = messages.scrollHeight;
     }
@@ -71,11 +75,14 @@ document.addEventListener("DOMContentLoaded", function () {
         if (normalizedQuestion.includes("nowadays") || normalizedQuestion.includes("these days") || normalizedQuestion.includes("currently") || normalizedQuestion.includes("doing now") || normalizedQuestion.includes("what is sonali doing")) {
             return "Sonali is currently pursuing her Ph.D. in Environmental Engineering at Virginia Tech and is also completing a Master's in Computer Science. Apart from research, she is preparing for the Hokie Half Marathon!";
         }
+        if (normalizedQuestion.includes("fun") || normalizedQuestion.includes("hobby") || normalizedQuestion.includes("free time") || normalizedQuestion.includes("harry potter") || normalizedQuestion.includes("running")) {
+            return "Sonali enjoys <strong>running and unapologetically nerding out over Harry Potter</strong>. She is always up for a deep dive into the Wizarding World and is currently listening to the <em>Harry Potter</em> audiobooks for what might be the 10th time. 🪄🏃‍♀️";
+        }
         if (normalizedQuestion.includes("research") || normalizedQuestion.includes("work")) {
             return "Sonali's research combines biosensing, Surface-enhanced Raman spectroscopy, nanoparticle engineering, and machine learning. She studies pathogen detection, protein changes in cells, and computational biology for single-cell sequencing data.";
         }
         if (normalizedQuestion.includes("publication") || normalizedQuestion.includes("paper")) {
-            return "Selected publications cover machine learning-assisted SERS detection, rapid virus quantification with a digital SERS-LFT dipstick, and Raman imaging of cementitious carbonation. Visit the Publications section or Google Scholar for the complete list.";
+            return "Here are selected publications from Sonali's <a href=\"#publications\">portfolio</a>:<br><br><a href=\"https://pubs.acs.org/esthag/article/58/47/20830/153043\" target=\"_blank\" rel=\"noopener\">Machine learning-assisted SERS detection review</a><br><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10956432/\" target=\"_blank\" rel=\"noopener\">Digital SERS-LFT dipstick for virus quantification</a><br><a href=\"https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/jrs.6483\" target=\"_blank\" rel=\"noopener\">Raman imaging of cementitious carbonation</a><br><a href=\"https://www.cell.com/one-earth/abstract/S2590-3322(24)00331-2\" target=\"_blank\" rel=\"noopener\">Nanosensors for water contaminant surveillance</a><br><a href=\"https://www.pnas.org/doi/full/10.1073/pnas.2604717123\" target=\"_blank\" rel=\"noopener\">Interfacial electric fields in microdroplet aerosols</a><br><br><a href=\"https://scholar.google.co.in/citations?user=JXGMY98AAAAJ&hl=en\" target=\"_blank\" rel=\"noopener\">View all publications on Google Scholar</a>.";
         }
         if (normalizedQuestion.includes("project")) {
             return "Current portfolio projects include Cross-Attention Enhanced SwinUNETR for brain tumor segmentation and CNN-based classification of diabetic retinopathy using retinal images.";
