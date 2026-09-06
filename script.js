@@ -120,6 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (normalizedQuestion.includes("nowadays") || normalizedQuestion.includes("these days") || normalizedQuestion.includes("currently") || normalizedQuestion.includes("doing now") || normalizedQuestion.includes("what is sonali doing")) {
             return "Sonali is currently pursuing her Ph.D. in Environmental Engineering at Virginia Tech and is also completing a Master's in Computer Science. Apart from research, she is preparing for the Hokie Half Marathon!";
         }
+        if (normalizedQuestion.includes("pensieve")) {
+            return "Muggles :|";
+        }
         if (normalizedQuestion.includes("fun") || normalizedQuestion.includes("hobby") || normalizedQuestion.includes("free time") || normalizedQuestion.includes("harry potter") || normalizedQuestion.includes("running")) {
             return "Sonali enjoys <strong>running and unapologetically nerding out over Harry Potter</strong>. She is always up for a deep dive into the Wizarding World and is currently listening to the <em>Harry Potter</em> audiobooks for what might be the 10th time. 🪄🏃‍♀️";
         }
