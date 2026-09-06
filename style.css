@@ -228,6 +228,10 @@ section h1 {
   flex: 1;
 }
 
+.news-symbol {
+  margin-right: 4px;
+}
+
 /* Blog */
 .blog-post {
   border-left: 3px solid #2563eb;
