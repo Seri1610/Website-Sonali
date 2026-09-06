@@ -42,6 +42,49 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(section);
     });
 
+    const storyIndex = document.querySelector("#story-index");
+    const storyReader = document.querySelector("#story-reader");
+    const backToStories = document.querySelector("#back-to-stories");
+    const storyArticles = document.querySelectorAll("[data-story]");
+
+    function showStory(storyId, updateHistory = true) {
+        const story = document.querySelector(`[data-story="${storyId}"]`);
+        if (!story) return showStoryIndex(false);
+        storyIndex.hidden = true;
+        storyReader.hidden = false;
+        storyArticles.forEach(article => {
+            article.hidden = article !== story;
+        });
+        if (updateHistory) window.history.pushState(null, "", `#${storyId}`);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showStoryIndex(updateHistory = true) {
+        storyIndex.hidden = false;
+        storyReader.hidden = true;
+        storyArticles.forEach(article => {
+            article.hidden = true;
+        });
+        if (updateHistory) window.history.pushState(null, "", window.location.pathname);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    if (storyIndex && storyReader && backToStories) {
+        document.querySelectorAll("[data-story-link]").forEach(link => {
+            link.addEventListener("click", event => {
+                event.preventDefault();
+                showStory(link.dataset.storyLink);
+            });
+        });
+        backToStories.addEventListener("click", () => showStoryIndex());
+        window.addEventListener("popstate", () => {
+            const storyId = window.location.hash.slice(1);
+            storyId ? showStory(storyId, false) : showStoryIndex(false);
+        });
+        const initialStory = window.location.hash.slice(1);
+        initialStory ? showStory(initialStory, false) : showStoryIndex(false);
+    }
+
     // A small local chatbot: replace getAssistantReply with a fetch call when a backend is ready.
     const launcher = document.querySelector("#chat-launcher");
     const panel = document.querySelector("#chat-panel");

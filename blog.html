@@ -48,11 +48,27 @@
 <main>
     <section id="blog" class="blog-section">
         <h1>From the Lab Notebook</h1>
-        <article class="blog-post">
+        <div class="story-index" id="story-index" aria-label="Notebook stories">
+            <div class="story-list">
+                <a class="story-link" href="#library-before-lab" data-story-link="library-before-lab">
+                    <span class="story-link-title">Spend 2 Hours in the Library to Save 2 Weeks in the Lab</span>
+                </a>
+                <a class="story-link" href="#learning-to-think-like-a-researcher" data-story-link="learning-to-think-like-a-researcher">
+                    <span class="story-link-title">Learning to Think Like a Researcher</span>
+                </a>
+                <a class="story-link" href="#the-experiment-between-experiments" data-story-link="the-experiment-between-experiments">
+                    <span class="story-link-title">The Experiment Between Experiments</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="story-reader" id="story-reader" hidden>
+            <button class="back-to-stories" id="back-to-stories" type="button">&larr; All stories</button>
+        <article class="blog-post" data-story="library-before-lab">
             <header class="blog-post-header">
                 <p class="blog-kicker">PhD reflections</p>
                 <h2>Spend 2 Hours in the Library to Save 2 Weeks in the Lab</h2>
-                <p class="blog-meta">First published in 2026 - 6 min read</p>
+                <p class="blog-meta">First published in 2026 · 6 min read</p>
             </header>
 
             <div class="blog-content">
@@ -95,6 +111,32 @@
                 <p><strong>Spend two hours thinking before you spend two weeks doing.</strong></p>
             </div>
         </article>
+        <article class="blog-post" data-story="learning-to-think-like-a-researcher" hidden>
+            <header class="blog-post-header">
+                <p class="blog-kicker">Research habits</p>
+                <h2>Learning to Think Like a Researcher</h2>
+                <p class="blog-meta">First published in 2026 · 4 min read</p>
+            </header>
+            <div class="blog-content">
+                <p>When I began my PhD, I thought research was mostly about finding answers. I expected the hard part to be learning the instruments, reading enough papers, and becoming technically skilled.</p>
+                <p>Over time, I learned that research often begins with sitting comfortably beside a question that does not have an obvious answer. The goal is not to make uncertainty disappear immediately. It is to make the uncertainty precise enough to investigate.</p>
+                <p>That shift changed how I read papers and plan experiments. I now pay closer attention to the assumptions behind a result, the controls that make it trustworthy, and the questions that remain open.</p>
+                <p>Being a researcher is less about always knowing what to do next and more about learning how to ask a better next question.</p>
+            </div>
+        </article>
+        <article class="blog-post" data-story="the-experiment-between-experiments" hidden>
+            <header class="blog-post-header">
+                <p class="blog-kicker">PhD reflections</p>
+                <h2>The Experiment Between Experiments</h2>
+                <p class="blog-meta">First published in 2026 · 3 min read</p>
+            </header>
+            <div class="blog-content">
+                <p>Not every useful part of research happens at the bench. Some of the most important work happens in the quiet spaces between experiments: cleaning up data, writing down what happened, and noticing a pattern that was easy to miss in the moment.</p>
+                <p>These pauses can feel unproductive because there is no instrument running and no new result to celebrate. But they are where observations become understanding.</p>
+                <p>I am learning to treat those pauses as part of the experiment itself. Good research needs motion, but it also needs enough stillness to make sense of where that motion is taking you.</p>
+            </div>
+        </article>
+        </div>
     </section>
 </main>
 
