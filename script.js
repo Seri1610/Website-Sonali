@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const messages = document.querySelector("#chat-messages");
     const suggestions = document.querySelectorAll("[data-question]");
 
+    if (!launcher || !panel || !closeButton || !form || !input || !messages) return;
+
     function setChatOpen(isOpen) {
         panel.hidden = !isOpen;
         launcher.setAttribute("aria-expanded", String(isOpen));
