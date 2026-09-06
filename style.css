@@ -411,6 +411,10 @@ section h1 {
   width: min(370px, calc(100vw - 32px));
 }
 
+.chat-panel[hidden] {
+  display: none;
+}
+
 .chat-header {
   align-items: center;
   background: #172554;
